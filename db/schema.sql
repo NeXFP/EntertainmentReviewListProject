@@ -1,0 +1,8 @@
+DROP DATABASE IF EXISTS entertainment_db;
+CREATE DATABASE entertainment_db;
+USE DATABASE entertainment_db;
+
+CREATE TABLE category (
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL
+);
