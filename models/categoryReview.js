@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-
-=======
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('..config/connection');
+const sequelize = require('../config/connection');
 
-class categoryName extends Model {}
+class categoryReview extends Model {}
 
-categoryName.init(
+categoryReview.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -15,26 +12,28 @@ categoryName.init(
             primaryKey: true,
             autoIncrement: true
         },
-        category_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        category_id: {
+        categoryName_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'category',
+                model: 'categoryName',
                 key: 'id'
             }
         },
+        tag_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'tag',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'categoryName',
+        modelName: 'categoryReview',
     }
 );
 
-module.exports = categoryName;
->>>>>>> 7bf1cfaaf98b1de0ee7a6cf576b91ae688b0b229
+module.exports = categoryReview;
