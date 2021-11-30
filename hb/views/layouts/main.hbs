@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entertainment Review</title>
+  <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <center><header>
+      <h1>Entertainment Review</h1>
+      <nav>
+          <a href="/main">Homepage</a>
+          <a href="/television">Television</a>
+          <a href="/music">Music</a>
+          <a href="/videogames">VideoGames</a>
+          {{#if loggedIn}}
+          <button id="logout" class="btn-no-style">Logout</button>
+          {{else}}
+          <a href="/login" class="btn-no-style">Login</a>
+          {{/if}}
+      </nav>
+    </header>
+    </center>
+  </div>
+  <br><br>
+  <div class="container">
+  </div>
+  <script src="/js/login.js"></script>
+</body>
+</html>

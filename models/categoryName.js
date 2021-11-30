@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('..config/connection');
@@ -37,4 +34,3 @@ categoryName.init(
 );
 
 module.exports = categoryName;
->>>>>>> 7bf1cfaaf98b1de0ee7a6cf576b91ae688b0b229
