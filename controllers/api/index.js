@@ -1,10 +1,13 @@
 const router = require('express').Router();
-const categoryRoutes = require('./category-routes');
+const musicRoutes = require('./categories/music-routes');
 const loginRoute = require('./login-route');
-const dataRoutes = require('./data-routes');
+const telRoutes = require('./categories/television-routes');
+const videoGameRoutes = require('./categories/videogames-routes');
 
-router.use('/categories', categoryRoutes);
+router.use('/music', musicRoutes);
 router.use('/login', loginRoute);
-router.use('/data', dataRoutes);
+router.use('/television', telRoutes);
+router.use('/video-games', videoGameRoutes);
+
 
 module.exports = router;

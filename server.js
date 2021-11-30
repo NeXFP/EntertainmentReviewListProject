@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const router = express.Router();
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const app = express();
@@ -21,7 +22,11 @@ const sess = {
 
 app.use(session(sess));
 
-app.engine('handlebars', 'hbs.engine');
+const helpers = require('./utils/helpers');
+
+const hbs = exphbs.create({ helpers });
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
@@ -33,3 +38,5 @@ app.use(require('./controllers'));
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on ${PORT}`))
 });
+
+module.exports = router;
