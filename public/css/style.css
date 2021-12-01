@@ -39,6 +39,32 @@ a:hover {
     border-radius: 25px;
 }
 
+.television {
+    background-color: #7f8c8d;
+	height: 1%;
+	justify-content: center;
+	width: 10%;
+    bottom: 30px;
+	box-shadow: 2px 2px 8px 2px black;
+    border-radius: 25px;
+}
+
+.postone {
+    background-color: #7f8c8d;
+	height: 30%;
+	justify-content: center;
+	width: 80%;
+    bottom: 30px;
+	box-shadow: 2px 2px 8px 2px black;
+    border-radius: 25px;
+}
+
+h5 {
+    font-family: monospace;
+    font-style: oblique;
+    font-size: small;
+}
+
 .shadow {
 	text-shadow: 2px 2px 3px black;
 	font-family: sans-serif;
