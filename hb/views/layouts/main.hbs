@@ -7,12 +7,21 @@
   <title>Entertainment Review</title>
   <link rel="stylesheet" href="/public/css/style.css">
 </head>
+
 <body>
   <div class="wrapper">
+<<<<<<< HEAD
+    <center>
+      <header>
+        <h1>Entertainment Review</h1>
+        <nav>
+          <a href="/main">Homepage</a>
+=======
     <center><header>
       <h1>Entertainment Review</h1>
       <nav>
           <a href="main.hbs">Homepage</a>
+>>>>>>> e51209cbea7de904a835621bd13d27ff57a58ec5
           <a href="/television">Television</a>
           <a href="/music">Music</a>
           <a href="/videogames">VideoGames</a>
@@ -21,29 +30,28 @@
           {{else}}
           <a href="/login" class="btn-no-style">Login</a>
           {{/if}}
-      </nav>
-    </header>
+        </nav>
+      </header>
     </center>
   </div>
   <br><br><br><br>
-      <center>
-      <article class="container">
-				<div id="aboutme" class="aboutmeSection">
-					<div class="aboutMe">
-						<h2 class= "shadow">About Us</h2>
-						<br>
-						<p> Hello everyone, we are the founder's of Entertainment Review. We built this application as a forum where movie buffs,
-              music lovers and gamers come to post their reviews regarding a piece of entertainment of their choice.
-					</div>
-				</div>
-		<!--Start of Resume Section-->
-				<div id="resume" class="resume">
-					<embed class="resSize" src="./assets/pdf/Resume.pdf#toolbar=0" type="application/pdf" alt="Current resume, placeholder for new one" />
-				</div>
-			</article>
-      </center>
-  <div class="container">
-  </div>
+  <!--<center>
+    <article class="container">
+      <div id="aboutme" class="aboutmeSection">
+        <div class="aboutMe">
+          <h2 class="shadow">About Us</h2>
+          <br>
+          <p> Hello everyone, we are the founder's of Entertainment Review. We built this application as a forum where
+            movie buffs, music lovers and gamers come to post their reviews regarding a piece of entertainment of their choice.
+        </div>
+      </div>
+    </article>
+  </center>-->
+  {{{body}}}
+
+  <footer>
+    Thank you for checking Entertainment Reviews! Have a great day!
+  </footer>
   <script src="/public/js/login.js"></script>
   <script src="/public/js/logout.js"></script>
 </body>
