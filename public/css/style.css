@@ -28,6 +28,23 @@ a:hover {
     color: #040a68;
 }
 
+.aboutmeSection {
+	background-color: #7f8c8d;
+	height: 400px;
+	justify-content: space-between;
+	padding:5%;
+	width: 40%;
+	box-shadow: 2px 2px 8px 2px black;
+	margin-bottom: 25px;
+    border-radius: 25px;
+}
+
+.shadow {
+	text-shadow: 2px 2px 3px black;
+	font-family: sans-serif;
+	font-style: oblique;
+}
+
 nav a {
     margin-left: 10px;
     margin-right: 10px;
