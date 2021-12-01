@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entertainment Review</title>
-  <link rel="stylesheet" href="../../public/css/style.css">
+  <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body>
@@ -14,15 +14,13 @@
       <header>
         <h1>Entertainment Review</h1>
         <nav>
-          <a href="/main">Homepage</a>
-          <a href="/television">Television</a>
-          <a href="/music">Music</a>
-          <a href="/videogames">VideoGames</a>
-          {{#if loggedIn}}
-          <button id="logout" class="btn-no-style">Logout</button>
-          {{else}}
-          <a href="/login" class="btn-no-style">Login</a>
-          {{/if}}
+          <a href="./preview.html">Homepage</a>
+          <a href="./television.html">Television</a>
+          <a href="./music.html">Music</a>
+          <a href="./videogames.html">VideoGames</a>
+          
+          <a href="./previewlogin.html" class="btn-no-style">Logout</a>
+          <a href="./previewlogin.html" class="btn-no-style">Login</a>
         </nav>
       </header>
     </center>
@@ -42,7 +40,7 @@
   </center>
   <div class="container">
   </div>
-  <script src="/public/js/login.js"></script>
-  <script src="/public/js/logout.js"></script>
+  <script src="../public/js/login.js"></script>
+  <script src="../public/js/logout.js"></script>
 </body>
 </html>
