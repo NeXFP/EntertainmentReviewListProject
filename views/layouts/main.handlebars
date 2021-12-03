@@ -10,10 +10,27 @@
 
 <body>
 
+  <nav class="wrapper">
+    <center>
+      <header>
+        <h1>Entertainment Review</h1>
+        <nav>
+          <a href="/">Homepage</a>
+          {{#if loggedIn}}
+          <button href ="/logout" id="logout" class="btn-no-style">Logout</button>
+          {{else}}
+          <a href="/login" class="btn-no-style">Login</a>
+          <a href="/signup" class="btn-no-style">Signup</a>
+          {{/if}}
+        </nav>
+      </header>
+    </center>
+  </nav>
+
   {{{body}}}
 
-  {{!-- <script src="/javascript/login.js"></script>
-  <script src="/javascript/logout.js"></script> --}}
-  
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>

@@ -1,14 +1,15 @@
 const router = require('express').Router();
+const { withAuth, withoutAuth} = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/login', withoutAuth, (req, res) => {
     res.render('login');
 })
 
-router.get('/signup', (req, res) => {
+router.get('/signup', withoutAuth,  (req, res) => {
     res.render('registration');
 })
 
-router.get('/main', (req, res) => {
+router.get('/', (req, res) => {
     res.render('post');
 });
 

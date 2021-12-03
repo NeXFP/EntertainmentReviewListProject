@@ -29,6 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
+app.use((req, res, next) => {res.locals = { ...res.locals, ...req.session };next();});
 
 app.use(require('./controllers'));
 
