@@ -1,6 +1,34 @@
 const router = require('express').Router();
 const { Comment, Post, Login } = require('../../../Models');
 
+//Get all posts
+router.get('/posts', (req, res) => {
+    Login.findAll({
+        attributes: { exclude: ['password'] },
+        include: [
+            {
+                model: Post,
+                attributes: ['id', 'title'],
+                include: {
+                    model: Comment,
+                    attributes: ['id', 'comment_text']
+                }
+            }
+        ]
+    })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'No user found with this id' });
+                return;
+            }
+            res.json(dbUserData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 //Create a user 
 router.post('/user', (req, res) => {
     Login.create({
