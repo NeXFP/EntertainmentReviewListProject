@@ -3,12 +3,12 @@ const { Login } = require('../../Models')
 
 router.get('/', (req, res) => {
     Login.findAll()
-    .then(dbLoginData => res.json(dbLoginData))
-    .catch((err) => {
-        console.log(err);
+        .then(dbLoginData => res.json(dbLoginData))
+        .catch((err) => {
+            console.log(err);
 
-        res.status(500).json(err);
-    });
+            res.status(500).json(err);
+        });
 });
 
 router.post('/', (req, res) => {
@@ -16,11 +16,11 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-    .then(dbLoginData => res.json(dbLoginData))
-    .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbLoginData => res.json(dbLoginData))
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.post('/login', (req, res) => {
@@ -29,25 +29,26 @@ router.post('/login', (req, res) => {
             email: req.body.email,
         },
     })
-    .then((dbLoginData) => {
-        if (!dbLoginData) { res.status(400).json({ message: "No user exists with this email address" });
-            return;
-        }
+        .then((dbLoginData) => {
+            if (!dbLoginData) {
+                res.status(400).json({ message: "No user exists with this email address" });
+                return;
+            }
 
-        const validPassword = dbLoginData.checkPassword(req.body.password);
+            const validPassword = dbLoginData.checkPassword(req.body.password);
 
             if (!validPassword) {
                 res.status(400).json({ message: "Incorrect password entered" });
                 return;
             }
 
-        req.session.save(() => {
-            req.session.user_id = dbLoginData.id;
-            req.session.loggedIn = true;
+            req.session.save(() => {
+                req.session.user_id = dbLoginData.id;
+                req.session.loggedIn = true;
 
-            res.json({ user: dbLoginData, message: "You are now logged in!" });
-        });
-    })
+                res.json({ user: dbLoginData, message: "You are now logged in!" });
+            });
+        })
 })
 
 router.post('/logout', (req, res) => {
