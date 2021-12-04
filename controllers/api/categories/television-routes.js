@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment } = require('../../../models');
+const { Comment } = require('../../../Models');
 
 //Create comment for tv show
 router.post('/', (req, res) => {
