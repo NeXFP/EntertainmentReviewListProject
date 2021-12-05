@@ -18,7 +18,10 @@
           <button id="slideright">Click Here for nothing!</button>
           <a href="/">Homepage</a>          
           {{#if loggedIn}}
-          <button href ="/logout" id="logout" class="btn-no-style">Logout</button>
+          <button href="/logout" id="logout" class="btn-no-style">Logout</button>
+          <a href="/music">Music</a>
+          <a href="/television">Television</a>
+          <a href="/video-games">Video Games</a>
           {{else}}
           <a href="/login" class="btn-no-style">Login</a>
           <a href="/signup" class="btn-no-style">Signup</a>
@@ -35,4 +38,5 @@
   {{/if}}
   <script src="/utils/helpers.js"></script>
 </body>
+
 </html>
