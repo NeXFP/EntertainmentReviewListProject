@@ -15,7 +15,8 @@
       <header>
         <h1>Entertainment Review</h1>
         <nav>
-          <a href="/">Homepage</a>
+          {{dateNow}}
+          <a href="/">Homepage</a>          
           {{#if loggedIn}}
           <button href="/logout" id="logout" class="btn-no-style">Logout</button>
           <a href="/music">Music</a>
@@ -35,6 +36,7 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  <script src="/js/index.js"></script>
 </body>
 
 </html>
