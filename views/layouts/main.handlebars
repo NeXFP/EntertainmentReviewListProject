@@ -15,7 +15,7 @@
       <header>
         <h1>Entertainment Review</h1>
         <nav>
-          {{dateNow}}
+          <button id="slideright">Click Here for nothing!</button>
           <a href="/">Homepage</a>          
           {{#if loggedIn}}
           <button href ="/logout" id="logout" class="btn-no-style">Logout</button>
@@ -33,6 +33,6 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
-  <script src="/js/index.js"></script>
+  <script src="/utils/helpers.js"></script>
 </body>
 </html>
