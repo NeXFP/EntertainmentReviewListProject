@@ -4,7 +4,7 @@
 Application that allows users to create reviews about different entertainment projects such as movies, television shows, and/or video-games. The reason we created this application was to allow people to express their feelings about their favorite projects.
 
 ## Preview Image
-![image](https://user-images.githubusercontent.com/69539559/144772649-f07c0e73-67ec-4ab5-bcd0-225c0dd46373.png)
+<img width="919" alt="image" src="https://user-images.githubusercontent.com/69539559/144773101-2c8414d0-a272-4d14-8867-5c94237916d3.png">
 
 ## Installation Requirements
 In order to use the application users must have the following preinstalled:
