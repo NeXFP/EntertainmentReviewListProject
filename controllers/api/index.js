@@ -9,7 +9,7 @@ const postRoutes = require('./post-routes')
 router.use('/music', musicRoutes);
 router.use('/television', telRoutes);
 router.use('/video-games', videoGameRoutes);
-router.use('/post-routes')
+router.use('/post-routes', postRoutes)
 
 router.use('/login', loginRoutes);
 
