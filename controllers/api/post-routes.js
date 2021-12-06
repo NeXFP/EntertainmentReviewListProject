@@ -6,32 +6,34 @@ const sequelize = require('../../config/connection');
 //GET all posts
 router.get('/', (req, res) => {
     console.log('---------------------');
-    Post.findAll({
-        attributes: ['id', 
-                     'post_text',
-                     'title',
-                     'created_at'
-                ],
-        //shows the latest news first
-        order: [['created_at', 'DESC']],
-        //JOIN to the User table
-        include: [
-            //attaches username to comment
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'post_id'],
-                include: {
-                  model: User,
-                  attributes: ['username']
-            }
-        },
-        {
-            model: User,
-            attributes: ['username']
-        },
-     ]
+    Post.findAll(
+    //   {
+    //     attributes: ['id', 
+    //                  'post_text',
+    //                  'title',
+    //                  'created_at'
+    //             ],
+    //     //shows the latest news first
+    //     order: [['created_at', 'DESC']],
+    //     //JOIN to the User table
+    //     include: [
+    //         //attaches username to comment
+    //         {
+    //             model: Comment,
+    //             attributes: ['id', 'comment_text', 'post_id'],
+    //             include: {
+    //               model: User,
+    //               attributes: ['username']
+    //         }
+    //     },
+    //     {
+    //         model: User,
+    //         attributes: ['username']
+    //     },
+    //  ]
 
-    })
+    // }
+    )
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
             console.log(err);

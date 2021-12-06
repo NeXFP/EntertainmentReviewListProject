@@ -1,6 +1,7 @@
+<center>
 <section>
     <h2>Post Something New</h2>
-
+    {{# if loggedIn}}
     <form class="new-post-form">
         <div>
             <label for="post-title">Title</label>
@@ -8,15 +9,18 @@
         </div>
         <div>
             <label for="post-text">Content</label>
-            <textarea name="post-text" id="post_url"></textarea>
+            <textarea name="post-text" id="post_text"></textarea>
         </div>
         <button type="submit" class="btn">Create Post</button>
     </form>
+    {{/if}}
 </section>
 <section>
-    {{#each posts}}
-    {{posts.id}}
+    {{#each posts as |post|}}
+        <h1>{{post.id}}</h1>
+        <h1>{{post.title}}</h1>
+        <h1>{{post.post_text}}</h1>
     {{/each}}
 </section>
-
+</center>
 <script src="/js/add-post.js"></script>
