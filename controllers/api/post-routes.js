@@ -43,29 +43,31 @@ router.get('/', (req, res) => {
 
 //GET single post by id
 router.get('/:id', (req, res) => {
-    Post.findOne({
+    Post.findOne(
+      {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 
-                   'post_text', 
-                   'title'
-                ],
-      include: [
-        {
-          model: User,
-          attributes: ['username']
-        },
-        {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'post_id'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        }
-      ]
-    })
+      // attributes: ['id', 
+      //              'post_text', 
+      //              'title'
+      //           ],
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['username']
+      //   },
+      //   {
+      //     model: Comment,
+      //     attributes: ['id', 'comment_text', 'post_id'],
+      //     include: {
+      //       model: User,
+      //       attributes: ['username']
+      //     }
+      //   }
+      // ]
+    }
+    )
       .then(dbPostData => {
         if (!dbPostData) {
           res.status(404).json({ message: 'No post found with this id' });
