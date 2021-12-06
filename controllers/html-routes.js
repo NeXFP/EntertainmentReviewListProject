@@ -42,6 +42,10 @@ router.get('/', (req, res) => {
         const posts = dbPostData.map(post => post.get({plain: true}))
         res.render("post", {posts})
     })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 module.exports = router;
