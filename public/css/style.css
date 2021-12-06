@@ -118,9 +118,9 @@ input {
     min-height: 45px;
 }
 
-textarea {
-    min-width: 40%;
-    min-height: 300px;
+#post-text {
+    height: 120px !important;
+    width: 400px !important;
 }
 
 form > div {
