@@ -35,8 +35,8 @@ router.get('/', (req, res) => {
         },
      ]
 
-    }) .then(dbpostData => {
-        const posts = dbpostData.map(post => post.get({plain: true}))
+    }) .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({plain: true}))
         res.render("post", {posts})
     })
 });
