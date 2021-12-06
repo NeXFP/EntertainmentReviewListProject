@@ -28,7 +28,7 @@ a:hover {
     color: #040a68;
 }
 
-.aboutmeSection {
+ .aboutmeSection {
 	background-color: #7f8c8d;
 	height: 400px;
 	justify-content: space-between;
@@ -243,3 +243,18 @@ footer {
     padding: 1%;
     font-size: 110%;
 };
+.myElement {
+        animation: pulsate 1s ease-out;
+        animation-iteration-count: infinite;
+        opacity: 1; 
+        @-webkit-keyframes pulsate {
+            0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+            50% {opacity: 1.0;}
+            100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+        }
+        
+}
+
+.slide {
+    @-webkit-keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(100px);transform:translateX(100px)}}@keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(100px);transform:translateX(100px)}}
+}
