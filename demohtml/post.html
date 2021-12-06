@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entertainment Review</title>
   <link rel="stylesheet" href="/css/style.css">
-  <link href="/css/vivify.min.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -15,16 +14,14 @@
     <center>
       <header>
         <h1>Entertainment Review</h1>
-        <a href="https://github.com/NeXFP/EntertainmentReviewListProject" class="shake" target="_blank">
-          <center><button class="shake">Click Here for our Github Repo!</button></center>
-        </a>
         <nav>
-          <a href="/">Homepage</a>
+          {{dateNow}}
+          <a href="/">Homepage</a>          
+          {{#if loggedIn}}
+          <button href="/logout" id="logout" class="btn-no-style">Logout</button>
           <a href="/music">Music</a>
           <a href="/television">Television</a>
           <a href="/video-games">Video Games</a>
-          {{#if loggedIn}}
-          <button href="/logout" id="logout" class="btn-no-style">Logout</button>
           {{else}}
           <a href="/login" class="btn-no-style">Login</a>
           <a href="/signup" class="btn-no-style">Signup</a>
@@ -40,8 +37,7 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
-  <script src="/utils/helpers.js"></script>
-
- 
+  <script src="/js/index.js"></script>
 </body>
+
 </html>
