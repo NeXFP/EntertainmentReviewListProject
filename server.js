@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -29,7 +29,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
-app.use((req, res, next) => {res.locals = { ...res.locals, ...req.session };next();});
+app.use((req, res, next) => { res.locals = { ...res.locals, ...req.session }; next(); });
+
+app.get('/music', (req, res) => {
+    res.render('music');
+});
+
+app.get('/television', (req, res) => {
+    res.render('television');
+});
+
+app.get('/video-games', (req, res) => {
+    res.render('videogames');
+});
 
 app.use(require('./controllers'));
 
