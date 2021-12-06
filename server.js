@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -41,6 +41,10 @@ app.get('/television', (req, res) => {
 
 app.get('/video-games', (req, res) => {
     res.render('videogames');
+});
+
+app.get('/post', (req, res) => {
+    res.render('post');
 });
 
 app.use(require('./controllers'));
